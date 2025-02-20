@@ -56,4 +56,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'concurrent-ruby', '1.3.4'
 
 gem 'psych', '~> 3.1'
+# ユーザー登録、ログイン/ログアウト機能のgem追加
 gem "devise", "~> 4.9"
