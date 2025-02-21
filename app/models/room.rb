@@ -1,4 +1,4 @@
 class Room < ApplicationRecord
   belongs_to :user
-  has_many :reservations, dependent: :destory
+  has_many :reservations
 end
