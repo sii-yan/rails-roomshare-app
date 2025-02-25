@@ -1,0 +1,22 @@
+<div class="hero">
+  <div class="hero_content">
+    <h1 class="hero__title">理想の宿泊施設を見つけよう</h1>
+    <% form_with url: room_path, method: :get class = "hero__search-form" do %>
+      <input type="text" name="search" placeholder="エリア・施設名で検索" class="hero__search-input">
+      <button type="submit" class="hero__search-button">検索</button>
+    <% end %>
+  </div>
+</div>
+
+<section class="recommend-area">
+  <h2 class="recommend-area__title">おすすめのエリア</h2>
+  <div class="recommend-area__list">
+    <% @rooms.each do |room| %>
+      <div class="recommend-area__item">
+        <%= image_tag room.image_url || "default_room.jpg", class: "popular__image" %>
+        <h3 class="recommend-area__name"><%= link_to room.name, room_path(room) %></h3>
+        <p class="recommend__price">￥<%= number_to_currency(room.price, unit: "") %>/泊</p>
+      </div>
+    <% end %>
+  </div>
+</section>
