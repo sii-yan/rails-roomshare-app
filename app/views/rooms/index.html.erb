@@ -1,0 +1,13 @@
+<h1>宿泊施設一覧</h1>
+<%= link_to "新規作成", new_room_path %>
+
+<% @rooms.each do |room| %>
+  <div>
+    <%= image_tag room.image_url if room.image_url.present? %>
+    <h2><%= link_to room.name, room %></h2>
+    <p>価格: ¥<%= room.price %>/泊</p>
+    <p><%= room.description %></p>
+    <%= link_to "編集", edit_room_path(room) %>
+    <%= link_to "削除", room, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+  </div>
+<% end %>

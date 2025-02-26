@@ -1,0 +1,16 @@
+<h1>宿泊施設の新規登録</h1>
+<%= form_with model: @room do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+
+  <%= f.label :image_url %>
+  <%= f.text_field :image_url %>
+
+  <%= f.submit "登録" %>
+<% end %>
