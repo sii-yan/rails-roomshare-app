@@ -1,19 +1,26 @@
 <div class="header__container">
   <div class="header__logo">
-    <% link_to "ROOM SHARE", root_path, class: "header__logo-link" %>
+    <%= link_to "ROOM SHARE", root_path, class: "header__logo-link" %>
   </div>
 
   <nav class="header__nav">
     <% if user_signed_in? %>
-      <div class="header__user">
-        <%= link_to current_user.name, user_path(current_user), class: "header__user-name" %>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__logout" %>
+    <div class="header__user">
+      <%= image_tag current_user.profile_image.presence || "default-avatar.png", class: "header__avatar" %>
+      <%= link_to current_user.name, user_path(current_user), class: "header__name" %>
+
+      <div class="header__dropdown">
+        <ul>
+          <li><%= link_to "アカウント設定", edit_user_path(current_user) %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        </ul>
       </div>
+    </div>
     <% else %>
-      <div class="header__auth">
-        <%= link_to "ログイン", new_user_session_path, class: "header__login" %>
-        <%= link_to "新規登録", new_user_registration_path, class: "header__signup" %>
-      </div>
+    <div class="header__auth">
+      <%= link_to "ログイン", new_user_session_path, class: "header__login" %>
+      <%= link_to "新規登録", new_user_registration_path, class: "header__signup" %>
+    </div>
     <% end %>
   </nav>
 </div>

@@ -1,0 +1,14 @@
+<h1>プロフィール編集</h1>
+
+<%= form_for current_user, url: user_path(current_user), method: :patch do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :profile_image, "プロフィール画像URL" %>
+  <%= f.text_field :profile_image %>
+
+  <%= f.label :bio, "自己紹介" %>
+  <%= f.text_area :bio %>
+
+  <%= f.submit "更新" %>
+<% end %>
