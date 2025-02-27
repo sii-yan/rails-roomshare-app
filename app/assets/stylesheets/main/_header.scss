@@ -1,0 +1,55 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #007bff;
+  color: white;
+
+  &__link {
+    margin-left: 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+  }
+
+  &__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  &__name {
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__dropdown {
+    display: none;
+    position: absolute;
+    background: white;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &__user:hover &__dropdown {
+    display: block;
+  }
+}
