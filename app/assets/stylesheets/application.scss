@@ -1,10 +1,12 @@
+// *= require_tree .
+// *= require_self
+
 @use "break-point";
 @use "color-variables";
 @use "common";
 @use "form";
-@use "hero";
+@use "top";
 @use "header";
 @use "footer";
 @use "button";
 @use "link";
-

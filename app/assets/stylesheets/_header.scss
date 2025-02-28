@@ -1,0 +1,106 @@
+@use "color-variables" as *;
+@use "break-point" as *;
+
+.header {
+  background: #fff;
+  padding: 10px 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo-link {
+    font-size: 24px;
+    font-weight: bold;
+    // color: $primary-blue;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    cursor: pointer; // クリックできるように
+    position: relative;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+  }
+
+  &__user-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__user-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__user-name {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &__dropdown-icon {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__dropdown {
+    display: none;opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    min-width: 150px;
+    z-index: 10;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      padding: 10px 15px;
+
+      a {
+        text-decoration: none;
+        // color: $text-black;
+        display: block;
+
+        &:hover {
+          // background: $primary-blue;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &__dropdown.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+}

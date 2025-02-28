@@ -1,0 +1,32 @@
+@use "color-variables" as *;
+
+.button {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &--primary {
+    // background: $primary-blue;
+    color: #fff;
+    border: none;
+
+    &:hover {
+      // background: darken($primary-blue, 10%);
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    // color: $primary-blue;
+    // border: 1px solid $primary-blue;
+
+    &:hover {
+      // background: $primary-blue;
+      color: #fff;
+    }
+  }
+}

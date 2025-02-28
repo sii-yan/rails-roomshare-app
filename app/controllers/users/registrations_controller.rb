@@ -2,18 +2,19 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
 
-#   private
+  private
 
-#   # Deviseのデフォルトでは name を登録できないことを解決するためのカスタマイズ
-#   def sign_up_params
-#     params.require(:user).permit(:name, :email, :password, :password_confirmation)
-#   end
+  # Deviseのデフォルトでは name を登録できないことを解決するためのカスタマイズ
+  def sign_up_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
 
-#   # ユーザーがアカウント情報（メールアドレス・パスワード）を変更できるようにする
-#   def account_update_params
-#     params.require(:user).permit(:email, :password, :password_confirmation, :current_password)
-#   end
-# end
+  # ユーザーがアカウント情報（メールアドレス・パスワード）を変更できるようにする
+  def account_update_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :current_password)
+  end
+
+
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 

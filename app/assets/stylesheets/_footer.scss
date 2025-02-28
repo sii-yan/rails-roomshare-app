@@ -1,0 +1,13 @@
+@use "color-variables" as *;
+
+.footer {
+  // background: $background-gray;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  // color: $text-black;
+
+  &__copyright {
+    margin-top: 10px;
+  }
+}
