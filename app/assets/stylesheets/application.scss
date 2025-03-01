@@ -2,7 +2,7 @@
 // *= require_self
 
 @use "break-point";
-@use "color-variables";
+@forward "color-variables";
 @use "common";
 @use "form";
 @use "top";
