@@ -10,6 +10,7 @@
   }
 }
 
+
 .NavItem {
 
   &__link {
@@ -33,104 +34,39 @@
     color: $white;
   }
 }
-// .header {
-//   background: #fff;
-//   padding: 10px 20px;
-//   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 
-//   &__inner {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//   }
 
-//   &__logo-link {
-//     font-size: 24px;
-//     font-weight: bold;
-//     // color: $primary-blue;
-//   }
+.NavProfile {
+  cursor: pointer;
 
-//   &__nav {
-//     display: flex;
-//     align-items: center;
-//     cursor: pointer; // クリックできるように
-//     position: relative;
-//   }
+  &__avatar {
+    border-radius: 60px;
+    margin-right: 8px;
+    width: 40px;
+  }
 
-//   &__user {
-//     display: flex;
-//     align-items: center;
-//     gap: 10px;
-//     position: relative;
-//   }
+  &__name {
+    font-size: 16px;
+    line-height: 24px;
+    margin-right: 10px;
+  }
 
-//   &__user-icon {
-//     width: 40px;
-//     height: 40px;
-//     border-radius: 50%;
-//     overflow: hidden;
+  &__icon {
+    width: 8px;
+  }
+}
 
-//     img {
-//       width: 100%;
-//       height: 100%;
-//       object-fit: cover;
-//     }
-//   }
+.DropdownMenu {
+  min-width: 122px;
+  padding: 8px 0;
 
-//   &__user-info {
-//     display: flex;
-//     align-items: center;
-//     gap: 5px;
-//   }
+  &__item {
+    font-size: 14px;
+    line-height: 18px;
+    padding: 0 8px;
+  }
 
-//   &__user-name {
-//     font-size: 16px;
-//     font-weight: bold;
-//   }
-
-//   &__dropdown-icon {
-//     width: 16px;
-//     height: 16px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//   }
-
-//   &__dropdown {
-//     display: none;
-//     position: absolute;
-//     top: 100%;
-//     right: 0;
-//     background: #fff;
-//     border-radius: 5px;
-//     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-//     padding: 10px 0;
-//     min-width: 150px;
-//     z-index: 10;
-
-//     ul {
-//       list-style: none;
-//       margin: 0;
-//       padding: 0;
-//     }
-
-//     li {
-//       padding: 10px 15px;
-
-//       a {
-//         text-decoration: none;
-//         // color: $text-black;
-//         display: block;
-
-//         &:hover {
-//           // background: $primary-blue;
-//           color: #fff;
-//         }
-//       }
-//     }
-//   }
-
-//   &__dropdown.is-active {
-//     display: block;
-//   }
-// }
+  &__hr {
+    margin: .5rem 0;
+  }
+}
