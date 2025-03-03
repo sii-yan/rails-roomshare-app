@@ -1,0 +1,7 @@
+@import "bootstrap/scss/bootstrap"; // Bootstrap を Webpacker 経由で読み込む
+@import "_variables";
+// @import "_break-point";
+// @import "footer";
+@import "form";
+@import "header";
+@import "common";

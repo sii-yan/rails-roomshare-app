@@ -1,45 +1,61 @@
-<div class="header__inner">
-  <div class="header__logo">
-    <%= link_to "ROOM SHARE", root_path, class: "header__logo-link" %>
-  </div>
+<nav class="navbar Navbar shadow-sm">
+  <div class="container">
+    <div>
+      <%= link_to "ROOM SHARE", root_path, class: "Navbar__logo" %>
+    </div>
 
-  <nav class="header__nav">
-    <% if user_signed_in? %>
-    <div class="header__user js-header-dropdown">
-      <!-- プロフィール画像 -->
-      
-      <!-- ユーザー名 + ドロップダウンアイコン -->
-      <div class="header__user-info">
-        <span class="header__user-name"><%= current_user.name %> 様</span>
-        <span class="header__dropdown-icon">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-          >
-            <path
-              fill="currentColor"
-              d="M10.964 5.972 8.177 8.759a.25.25 0 0 1-.354 0L5.036 5.972a.75.75 0 1 0-1.06 1.06L6.762 9.82a1.75 1.75 0 0 0 2.475 0l2.787-2.788a.75.75 0 1 0-1.06-1.06"
-            ></path>
+    <div class="header__nav">
+      <% if user_signed_in? %>
+      <div class="dropdown">
+        <!-- プロフィール画像 -->
+        <div class="d-flex align-items-center NavProfile" id="dropdown-button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img class="NavProfile__avatar" alt="アバター" src="/assets/common/default-avatar-7a6cbfd7993e89f24bfc888f4a035a83c6f1428b8bdc47eed9095f2799a40153.png">
+
+          <span class="nav-item d-sm-inline-block d-none NavProfile__name">
+            トム
+          </span>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down NavProfile__icon" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path>
           </svg>
-        </span>
-      </div>
+        </div>
+        <!-- ユーザー名 + ドロップダウンアイコン -->
+        <div class="header__user-info">
+          <span class="header__user-name"><%= current_user.name %></span>
+          <span class="header__dropdown-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                fill="currentColor"
+                d="M10.964 5.972 8.177 8.759a.25.25 0 0 1-.354 0L5.036 5.972a.75.75 0 1 0-1.06 1.06L6.762 9.82a1.75 1.75 0 0 0 2.475 0l2.787-2.788a.75.75 0 1 0-1.06-1.06"
+              ></path>
+            </svg>
+          </span>
+        </div>
 
-      <!-- ドロップダウンメニュー -->
-      <div class="header__dropdown">
-        <ul>
-          <li><%= link_to "アカウント設定", edit_user_path(current_user) %></li>
-          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-        </ul>
+        <!-- ドロップダウンメニュー -->
+        <div class="header__dropdown">
+          <ul>
+            <li><%= link_to "アカウント設定", edit_user_path(current_user) %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </div>
       </div>
+      <% else %>
+      <ul class="navbar-nav flex-row align-items-center">
+        <li class="nav-item NavItem">
+          <%= link_to "ログイン", new_user_session_path, class: "fw-bold NavItem__link  NavItem__link--login" %>
+        </li>
+        <li class="nav-item NavItem">
+          <%= link_to "新規登録", new_user_registration_path, class: "btn fw-bold NavItem__link  NavItem__link--register" %>
+        </li>
+      </ul>
+      <% end %>
     </div>
-    <% else %>
-    <div class="header__auth">
-      <%= link_to "ログイン", new_user_session_path, class: "header__login" %>
-      <%= link_to "新規登録", new_user_registration_path, class: "header__signup" %>
-    </div>
-    <% end %>
-  </nav>
-</div>
+  </div>
+</nav>

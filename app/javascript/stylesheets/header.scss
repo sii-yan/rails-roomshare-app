@@ -1,0 +1,136 @@
+// @use "color-variables" as *;
+// @use "break-point" as *;
+
+.Navbar {
+  background-color: $white;
+  height: 64px;
+
+  &__logo {
+    font-size: 20px;
+  }
+}
+
+.NavItem {
+
+  &__link {
+    color: $text-black;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 8px 16px;
+  }
+
+  &__link--login {
+    margin-right: 24px;
+  }
+
+  &__link--register {
+    background-color: $button-green;
+    color: $white;
+  }
+
+  &__link--register:hover {
+    background-color: $button-hover-green;
+    color: $white;
+  }
+}
+// .header {
+//   background: #fff;
+//   padding: 10px 20px;
+//   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+
+//   &__inner {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//   }
+
+//   &__logo-link {
+//     font-size: 24px;
+//     font-weight: bold;
+//     // color: $primary-blue;
+//   }
+
+//   &__nav {
+//     display: flex;
+//     align-items: center;
+//     cursor: pointer; // クリックできるように
+//     position: relative;
+//   }
+
+//   &__user {
+//     display: flex;
+//     align-items: center;
+//     gap: 10px;
+//     position: relative;
+//   }
+
+//   &__user-icon {
+//     width: 40px;
+//     height: 40px;
+//     border-radius: 50%;
+//     overflow: hidden;
+
+//     img {
+//       width: 100%;
+//       height: 100%;
+//       object-fit: cover;
+//     }
+//   }
+
+//   &__user-info {
+//     display: flex;
+//     align-items: center;
+//     gap: 5px;
+//   }
+
+//   &__user-name {
+//     font-size: 16px;
+//     font-weight: bold;
+//   }
+
+//   &__dropdown-icon {
+//     width: 16px;
+//     height: 16px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//   }
+
+//   &__dropdown {
+//     display: none;
+//     position: absolute;
+//     top: 100%;
+//     right: 0;
+//     background: #fff;
+//     border-radius: 5px;
+//     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+//     padding: 10px 0;
+//     min-width: 150px;
+//     z-index: 10;
+
+//     ul {
+//       list-style: none;
+//       margin: 0;
+//       padding: 0;
+//     }
+
+//     li {
+//       padding: 10px 15px;
+
+//       a {
+//         text-decoration: none;
+//         // color: $text-black;
+//         display: block;
+
+//         &:hover {
+//           // background: $primary-blue;
+//           color: #fff;
+//         }
+//       }
+//     }
+//   }
+
+//   &__dropdown.is-active {
+//     display: block;
+//   }
+// }
