@@ -18,8 +18,13 @@ Rails.application.routes.draw do
     patch "profile", to: "users#update_profile", as: "update_profile"
   end
 
-  # resources :users, only: [:show, :edit, :update] # ユーザー詳細・編集
-  resources :rooms
+
+  resources :rooms do
+    collection do
+      get 'search'  # 施設検索用のルート
+    end
+  end
+
   resources :reservations
 
   root 'home#index'

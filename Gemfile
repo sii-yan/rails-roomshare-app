@@ -52,10 +52,13 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# 追加
+
+# *** 追加 ***
 gem 'concurrent-ruby', '1.3.4'
 
 gem 'psych', '~> 3.1'
 
-# ユーザー登録、ログイン/ログアウト機能のgem追加
-gem "devise", "~> 4.9"
+gem "devise", "~> 4.9" # ユーザー登録、ログイン/ログアウト機能のgem追加
+
+gem 'bigdecimal'
+gem 'mutex_m'
