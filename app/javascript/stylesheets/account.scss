@@ -1,0 +1,332 @@
+.UserSection {
+  padding-top: 40px;
+  padding-bottom: 160px
+}
+
+@media screen and (max-width: 960px) {
+  .UserSection {
+      padding-top:32px;
+      padding-bottom: 180px
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .UserSection {
+      padding-top:24px;
+      padding-bottom: 100px
+  }
+}
+
+.UserContainer {
+  display: flex;
+  grid-gap: 32px;
+  gap: 32px;
+  justify-content: space-between
+}
+
+.SideNavigation {
+  border: 1px solid $border-light-gray;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 336px
+}
+
+@media screen and (max-width: 960px) {
+  .SideNavigation {
+      display:none
+  }
+}
+
+.SideNavigation__item {
+  padding: 20px 24px
+}
+
+.SideNavigation__item:first-of-type {
+  border-bottom: 1px solid $border-light-gray
+}
+
+.SideNavigation__item>a {
+  color: #333;
+  font-size: 16px;
+  line-height: 26px
+}
+
+.SideNavigation__item.active>a {
+  color: $button-hover-green
+}
+
+
+.TabNavigation {
+  display: none
+}
+
+@media screen and (max-width: 960px) {
+  .TabNavigation {
+      border:1px solid $border-light-gray;
+      display: flex;
+      margin-bottom: 32px
+  }
+}
+
+.TabNavigation__item {
+  padding: 20px;
+  text-align: center;
+  width: 50%
+}
+
+@media screen and (max-width: 960px) {
+  .TabNavigation__item {
+      padding:16px
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .TabNavigation__item {
+      padding:14px
+  }
+}
+
+.TabNavigation__item:first-of-type {
+  border: 1px solid $border-light-gray
+}
+
+.TabNavigation__item>a {
+  color: $text-black;
+  font-size: 16px;
+  line-height: 26px
+}
+
+.TabNavigation__item.active>a {
+  color: $button-hover-green
+}
+
+
+
+.AccountInformation {
+  width: calc(100% - 32px)
+}
+
+@media screen and (max-width: 960px) {
+  .AccountInformation {
+      width:100%
+  }
+}
+
+.AccountInformation__header {
+  align-items: center;
+  border-bottom: 1px solid $border-light-gray;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 8px
+}
+
+.AccountInformation__header>h3 {
+  margin-bottom: 0
+}
+
+.AccountInformation__link {
+  display: flex;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px
+}
+
+@media screen and (max-width: 960px) {
+  .AccountInformation__link {
+      font-size:16px;
+      line-height: 24px
+  }
+}
+
+.AccountInformation__link>img {
+  margin-right: 8px
+}
+
+@media screen and (max-width: 960px) {
+  .AccountInformation__link>img {
+      margin-right:6px;
+      width: 15px
+  }
+}
+
+.AccountInformation__input-group {
+  align-items: center;
+  display: flex;
+  margin-bottom: 24px
+}
+
+@media screen and (max-width: 600px) {
+  .AccountInformation__input-group {
+      align-items:flex-start;
+      flex-direction: column
+  }
+}
+
+.AccountInformation__label {
+  color: $text-black;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  width: 25%
+}
+
+@media screen and (max-width: 600px) {
+  .AccountInformation__label {
+      margin-bottom:8px;
+      width: 100%
+  }
+}
+
+.AccountInformation__label--caption {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px
+}
+
+.AccountInformation__value {
+  margin-bottom: 0;
+  width: 75%
+}
+
+.AccountInformation__value>img {
+  border-radius: 60px;
+  -o-object-fit: contain;
+  object-fit: contain;
+  width: 80px
+}
+
+.AccountInformation__input-wrapper {
+  width: 75%
+}
+
+@media screen and (max-width: 600px) {
+  .AccountInformation__input-wrapper {
+      width:100%
+  }
+}
+
+.AccountInformation__input {
+  padding: .375rem .75rem;
+  width: 100%
+}
+
+.AccountInformation__buttons {
+  display: flex;
+  grid-gap: 16px;
+  gap: 16px;
+  justify-content: flex-end
+}
+
+@media screen and (max-width: 960px) {
+  .AccountInformation__buttons {
+      flex-direction:column-reverse
+  }
+}
+
+.AccountInformation__button {
+  align-items: center;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  height: 58px;
+  font-size: 18px
+}
+
+.AccountInformation__button:focus {
+  box-shadow: none
+}
+
+.AccountInformation__button--primary {
+  background-color: $button-green;
+  color: $white;
+  width: 88px
+}
+
+.AccountInformation__button--primary:hover {
+  color: $white
+}
+
+.AccountInformation__button--secondary {
+  border: 1px solid $border-light-gray;
+  color: $text-gray;
+  line-height: 44px;
+  width: 148px
+}
+
+.AccountInformation__button--secondary:hover {
+  color: $text-gray
+}
+
+@media screen and (max-width: 960px) {
+  .AccountInformation__button {
+      width:100%
+  }
+}
+
+
+// File Up
+.FileUploadArea {
+  align-items: center;
+  display: flex;
+  margin-bottom: 24px
+}
+
+@media screen and (max-width: 600px) {
+  .FileUploadArea {
+      align-items:flex-start;
+      flex-direction: column
+  }
+}
+
+.FileUploadArea__image {
+  border-radius: 60px;
+  margin-right: 24px;
+  width: 80px
+}
+
+.FileUploadArea__input-group {
+  margin-bottom: 0
+}
+
+@media screen and (max-width: 600px) {
+  .FileUploadArea__input-group {
+      width:100%
+  }
+}
+
+.FileUploadArea__label {
+  background: linear-gradient(180deg,#fff,#f8f8f8);
+  border: 1px solid #dfe2e6;
+  border-radius: 8px;
+  color: #333;
+  font-size: 12px;
+  line-height: 18px;
+  height: 34px;
+  text-align: center;
+  width: 244px
+}
+
+@media screen and (max-width: 600px) {
+  .FileUploadArea__label {
+      display:block;
+      margin-top: 8px;
+      margin-left: 0
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .FileUploadArea__label {
+      width:100%
+  }
+}
+
+.FileUploadArea__label>span {
+  line-height: 34px
+}
+
+.FileUploadArea__label>input {
+  display: none
+}

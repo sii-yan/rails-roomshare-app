@@ -1,20 +1,27 @@
 Rails.application.routes.draw do
 
-  root 'home#index'
-
   devise_for :users, controllers: {
     registrations: "users/registrations",
     sessions: "users/sessions"
+  }, path: '', path_names: {
+    sign_up: 'signup',
+    sign_in: 'login',
+    sign_out: 'logout',
+    edit: 'account/edit'
   }
 
-  resources :users, only: [:show, :edit, :update] # ユーザー詳細・編集
+  # アカウント設定・プロフィール関連のルート
+  resource :users, only: [] do
+    get "account"
+    get "profile"
+    get "profile/edit", to: "users#edit_profile"
+    patch "profile", to: "users#update_profile", as: "update_profile"
+  end
+
+  # resources :users, only: [:show, :edit, :update] # ユーザー詳細・編集
   resources :rooms
   resources :reservations
-  
 
-  # ユーザーのアカウント設定とプロフィールに関するルーティング
-  resource :account, only: [:show, :edit, :update], controller: 'accounts'
-  resource :profile, only: [:show, :edit, :update], controller: 'profiles'
-
-  get "dashboard", to: "dashboard#index"
+  root 'home#index'
 end
+

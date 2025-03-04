@@ -1,14 +1,65 @@
-<h1>プロフィール編集</h1>
+<section class="container UserSection">
+  <h2>設定</h2>
 
-<%= form_for current_user, url: user_path(current_user), method: :patch do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <div class="UserContainer">
+    <ul class="SideNavigation">
+      <li class="SideNavigation__item ">
+        <%= link_to "アカウント", account_users_path %>
+      </li>
 
-  <%= f.label :profile_image, "プロフィール画像URL" %>
-  <%= f.text_field :profile_image %>
+      <li class="SideNavigation__item active">
+        <%= link_to "プロフィール", profile_users_path %>
+      </li>
+    </ul>
 
-  <%= f.label :bio, "自己紹介" %>
-  <%= f.text_area :bio %>
+    <section class="AccountInformation">
+      <ul class="TabNavigation">
+        <li class="TabNavigation__item ">
+          <%= link_to "アカウント", account_users_path %>
+        </li>
 
-  <%= f.submit "更新" %>
-<% end %>
+        <li class="TabNavigation__item active">
+          <%= link_to "プロフィール", profile_users_path %>
+        </li>
+      </ul>
+
+      <div class="AccountInformation__header">
+        <h3>プロフィール</h3>
+      </div>
+
+      <%= form_for @user, url: update_profile_users_path, method: :patch do |f| %>
+        <div class="FileUploadArea AccountInformation__input-group">
+          <%= f.label :image, "アイコン画像", class: "AccountInformation__label" %>
+
+          <p class="FileUploadArea__input-group">
+            <!-- <img class="FileUploadArea__image" alt="アイコン画像" src="/assets/common/default-avatar-7a6cbfd7993e89f24bfc888f4a035a83c6f1428b8bdc47eed9095f2799a40153.png"> -->
+
+            <%= f.file_field :image, class: "FileUploadArea__label" %>
+            <span>画像アップロード</span>
+          </p>
+        </div>
+
+        <div class="AccountInformation__input-group">
+          <%= f.label :name, "名前", class: "AccountInformation__label" %>
+
+          <div class="AccountInformation__input-wrapper">
+            <%= f.text_field :name, autocomplete: "name", class: "form-control AccountInformation__input" %>
+          </div>
+        </div>
+
+        <div class="AccountInformation__input-group">
+          <%= f.label :bio, "自己紹介", class: "AccountInformation__label" %>
+
+          <div class="AccountInformation__input-wrapper">
+            <%= f.text_area :bio, placeholder: "自己紹介を入力", class: "form-control AccountInformation__input" %>
+          </div>
+        </div>
+
+        <div class="AccountInformation__buttons">
+          <%= link_to "キャンセル", :back, class: "btn AccountInformation__button AccountInformation__button--secondary" %>
+          <%= f.submit "保存", class: "btn AccountInformation__button AccountInformation__button--primary" %>
+        </div>
+      <% end %>
+    </section>
+  </div>
+</section>
