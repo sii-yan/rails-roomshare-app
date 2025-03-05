@@ -25,10 +25,11 @@ ActiveRecord::Schema.define(version: 2025_02_26_001849) do
   end
 
   create_table "rooms", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.integer "price"
-    t.string "address"
+    t.string "name", null: false
+    t.text "description", null: false
+    t.integer "price", null: false
+    t.string "address", null: false
+    t.string "image"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
