@@ -31,6 +31,10 @@
       <!-- ドロップダウンメニュー -->
       <ul class="dropdown-menu DropdownMenu" aria-labelledby="dropdown-button">
         <li class="DropdownMenu__item">
+          <%= link_to "ルーム登録", new_room_path %>
+        </li>
+        <hr class="DropdownMenu__hr">
+        <li class="DropdownMenu__item">
           <%= link_to "アカウント設定", account_users_path(current_user) %>
         </li>
         <hr class="DropdownMenu__hr">

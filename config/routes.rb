@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     edit: 'account/edit'
   }
 
-  # アカウント設定・プロフィール関連のルート
+  # アカウント設定・プロフィール関連
   resource :users, only: [] do
     get "account"
     get "profile"
@@ -18,10 +18,10 @@ Rails.application.routes.draw do
     patch "profile", to: "users#update_profile", as: "update_profile"
   end
 
-
+  # 施設関連
   resources :rooms do
     collection do
-      get 'search'  # 施設検索用のルート
+      get 'search', to: 'rooms#search' # 施設検索用のルート
     end
   end
 
