@@ -1,0 +1,100 @@
+<section class="container OwnRoomsContainer">
+  <h2>登録済み一覧</h2>
+
+  <div class="table-responsive">
+    <table class="table align-middle OwnRoomsTable">
+      <thead>
+        <tr>
+          <th>画像</th>
+          <th>施設名</th>
+          <th>紹介文</th>
+          <th>料金</th>
+          <th>作成日</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% if @rooms.present? %>
+          <% @rooms.each do |room| %>
+            <tr>
+              <td>
+                <% if room.image.attached? %>
+                  <%= image_tag(room.image.presence || "default/default-image.png", class: "RoomCard__image") %>
+                <% else %>
+                  <!-- デフォルト画像 -->
+                  <%= image_tag "default/default-image.png", class: "RoomDetails__image" %>
+                <% end %>
+              </td>
+
+              <td><%= link_to room.name %></td>
+              <td><%= room.description %></td>
+              <td class="text-nowrap"><%= room.price %></td>
+              <td class="text-nowrap"><%= room.created_at.to_s(:datetime_jp) %></td>
+
+              <td>
+                <div class="dropdown">
+                  <div
+                    class="d-flex align-items-center justify-content-center"
+                    id="dropdown-button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      class="bi bi-three-dots"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+                    </svg>
+                  </div>
+
+                  <ul class="dropdown-menu DropdownMenu" aria-labelledby="dropdown-button">
+                    <li class="DropdownMenu__item">
+                      <%= link_to "編集", edit_room_path(room) %>
+                    </li>
+
+                    <li class="DropdownMenu__item DropdownMenu__item--danger">
+                      <a href="#" class="delete-room-btn" data-room-id="<%= room.id %>" data-room-name="<%= room.name %>" data-room-price="<%= room.price %>" data-room-image="<%= room.image.attached? ? url_for(room.image) : asset_path('default/default-image.png') %>">
+                        施設を削除
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        <% else %>
+          <div class="">
+            <p>現在、施設が登録されていません。</p>
+          </div>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 削除確認モーダル -->
+<div id="deleteModal" class="modal fade" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">以下の施設を削除しますか？</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="modal-room-image" class="ConfirmBody__image" src="" alt="Room Image">
+        <div id="modal-room-name"></div>
+        <div id="modal-room-price"></div>
+        <p>よろしければ「削除」ボタンを押してください。</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
+        <%= button_to "削除", "", method: :delete, class: "btn btn-danger", id: "modal-delete-button", form: false %>
+      </div>
+    </div>
+  </div>
+</div>

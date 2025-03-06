@@ -59,6 +59,11 @@ class RoomsController < ApplicationController
     render :index
   end
 
+  # 登録済みルーム一覧
+  def own
+    @rooms = Room.where(user_id: current_user.id) # ユーザーに関連する部屋を取得
+  end
+
   private
 
   def set_room

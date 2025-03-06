@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :rooms do
     collection do
       get 'search', to: 'rooms#search' # 施設検索用のルート
+      get 'own', to: 'rooms#own' # 登録済ルーム一覧用のルート
     end
   end
 
