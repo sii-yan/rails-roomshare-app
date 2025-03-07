@@ -29,7 +29,7 @@
 
 
       <%= form_for(resource, as: resource_name, url: profile_users_path(resource_name), html: { method: :put }) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
+        <%= render 'shared/error_messages', object: f.object %>
 
         <div class="mb-4 AccountInformation__input-group">
           <%= f.label :email, "メールアドレス", class: "AccountInformation__label" %>

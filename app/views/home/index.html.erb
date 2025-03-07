@@ -14,3 +14,43 @@
     </div>
   </section>
 </div>
+
+
+<div class="container">
+  <section class="RecommendAreaSection">
+    <h2 class="RecommendAreaSection__title">
+      おすすめのエリア
+    </h2>
+
+    <div class="RecommendAreas">
+      <%= link_to search_rooms_path(area: "東京"), class: "RecommendArea RecommendArea--tokyo" do %>
+        <span class="RecommendArea__name RecommendArea__name--ja">東京</span>
+        <span class="RecommendArea__name RecommendArea__name--en">
+          Tokyo
+        </span>
+      <% end %>
+    
+      <%= link_to search_rooms_path(area: "大阪"), class: "RecommendArea RecommendArea--osaka" do %>
+        <span class="RecommendArea__name RecommendArea__name--ja">大阪</span>
+        <span class="RecommendArea__name RecommendArea__name--en">
+          Osaka
+        </span>
+      <% end %>
+    
+      <%= link_to search_rooms_path(area: "京都"), class: "RecommendArea RecommendArea--kyoto" do %>
+        <span class="RecommendArea__name RecommendArea__name--ja">京都</span>
+        <span class="RecommendArea__name RecommendArea__name--en">
+          Kyoto
+        </span>
+      <% end %>
+    
+      <%= link_to search_rooms_path(area: "札幌"), class: "RecommendArea RecommendArea--sapporo" do %>
+        <span class="RecommendArea__name RecommendArea__name--ja">札幌</span>
+        <span class="RecommendArea__name RecommendArea__name--en">
+          Sapporo
+        </span>
+      <% end %>
+    </div>
+  </section>
+</div>
+

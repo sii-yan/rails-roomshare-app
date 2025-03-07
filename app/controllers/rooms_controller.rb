@@ -10,6 +10,8 @@ class RoomsController < ApplicationController
 
   # 施設詳細
   def show
+    @room = Room.find(params[:id])
+    @reservation = Reservation.new
   end
 
   # 施設新規作成フォーム
@@ -43,10 +45,10 @@ class RoomsController < ApplicationController
   end
 
   # 施設削除
-  def destory
-    @room.destory
+  def destroy
+    @room.destroy
     flash[:notice] = "宿泊施設が削除されました。"
-    redirect_to :rooms_pathnotice
+    redirect_to rooms_path
   end
 
   # 施設検索

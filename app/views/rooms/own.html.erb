@@ -29,7 +29,7 @@
 
               <td><%= link_to room.name %></td>
               <td><%= room.description %></td>
-              <td class="text-nowrap"><%= room.price %></td>
+              <td class="text-nowrap">¥<%= number_with_delimiter(room.price) %>~</td>
               <td class="text-nowrap"><%= room.created_at.to_s(:datetime_jp) %></td>
 
               <td>
@@ -58,9 +58,7 @@
                     </li>
 
                     <li class="DropdownMenu__item DropdownMenu__item--danger">
-                      <a href="#" class="delete-room-btn" data-room-id="<%= room.id %>" data-room-name="<%= room.name %>" data-room-price="<%= room.price %>" data-room-image="<%= room.image.attached? ? url_for(room.image) : asset_path('default/default-image.png') %>">
-                        施設を削除
-                      </a>
+                      <%= link_to "施設を削除", room, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "delete-room-btn" %>
                     </li>
                   </ul>
                 </div>

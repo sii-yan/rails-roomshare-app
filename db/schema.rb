@@ -41,9 +41,10 @@ ActiveRecord::Schema.define(version: 2025_03_05_125129) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.date "check_in"
-    t.date "check_out"
-    t.integer "guests"
+    t.date "start_date", null: false
+    t.date "end_date", null: false
+    t.integer "person_num", null: false
+    t.integer "total_price", default: 0, null: false
     t.integer "user_id", null: false
     t.integer "room_id", null: false
     t.datetime "created_at", precision: 6, null: false

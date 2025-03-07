@@ -23,7 +23,7 @@
             <p class="Room__address"><%= room.address %></p>
             <p class="Room__content"><%= room.description %></p>
             <div class="RoomFooter">
-              <p class="Room__price">¥<%= number_with_delimiter(room.price) %>/泊</p>
+              <p class="Room__price">¥<%= number_with_delimiter(room.price) %>~</p>
               <%= link_to "詳細はこちら", room_path(room), class: "Room__link" %>
             </div>
           </div>

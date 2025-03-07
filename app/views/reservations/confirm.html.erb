@@ -1,0 +1,39 @@
+<div class="ConfirmWrapper">
+  <section class="ConfirmContainer">
+    <h2>予約内容のの確認</h2>
+
+    <div class="ReservationDetails">
+      <% if @room.image.attached? %>
+        <%= image_tag @room.image, class: "ReservationDetails__image" %>
+      <% else %>
+        <%= image_tag "default/default-image.png", class: "ReservationDetails__image" %>
+      <% end %>
+
+      <div class="ReservationDetails__title">
+        <span class="ReservationDetails__room-name"><%= @room.name %></span>
+        <span class="ReservationDetails__room-price">¥<%= number_with_delimiter(@room.price) %>~</span>
+      </div>
+
+      <span class="ReservationDetails__room-address"><%= @room.address %></span>
+      <p class="ReservationDetails__room-content"><%= @room.description %></p>
+    </div>
+
+    <div class="ConfirmInfo">
+      <p>チェックイン: <%= @reservation.start_date %></p>
+      <p>チェックアウト: <%= @reservation.end_date %></p>
+      <p>人数: <%= @reservation.person_num %>人</p>
+    </div>
+
+    <%= form_with model: @reservation, url: reservations_path, method: :post, local: true do |f| %>
+      <%= f.hidden_field :start_date %>
+      <%= f.hidden_field :end_date %>
+      <%= f.hidden_field :person_num %>
+      <%= f.hidden_field :room_id %>
+      <%= f.hidden_field :user_id %>
+
+      <%= f.submit "予約を確定する", class: "btn ConfirmButton" %>
+    <% end %>
+
+    <%= link_to "戻る", room_path(@room), class: "btn CancelButton" %>
+  </section>
+</div>

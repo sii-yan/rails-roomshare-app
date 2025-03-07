@@ -4,6 +4,7 @@
 
     <div class="Form AccountForm">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
         <div class="mb-3">
           <%= f.label :email, "メールアドレス", class: "form-label" %>
           <%= f.email_field :email, autocomplete: "email", placeholder: "メールアドレスを入力", class: "form-control" %>

@@ -4,6 +4,7 @@
 
     <div class="Form AccountForm">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
         <div class="mb-3">
           <%= f.label :name, "ユーザー名", class: "form-label Form__label-required" %>
           <%= f.text_field :name, autocomplete: "name", placeholder: "ユーザー名を入力", class: "form-control" %>

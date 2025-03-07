@@ -62,3 +62,6 @@ gem "devise", "~> 4.9" # ユーザー登録、ログイン/ログアウト機能
 
 gem 'bigdecimal'
 gem 'mutex_m'
+
+# 日本語の言語設定
+gem 'rails-i18n'
