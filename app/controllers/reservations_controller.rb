@@ -39,6 +39,9 @@ class ReservationsController < ApplicationController
   def confirm
     @reservation = Reservation.new(reservation_params)
     @room = Room.find(@reservation.room_id)
+
+    # `total_price` を計算してセット
+    @reservation.total_price = (@reservation.end_date - @reservation.start_date).to_i * @room.price
   
     unless @reservation.valid?
       flash.now[:alert] = @reservation.errors.full_messages.join(", ")

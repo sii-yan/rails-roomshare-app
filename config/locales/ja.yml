@@ -11,6 +11,6 @@ ja:
         price: 1泊あたりの金額
         image: 施設画像
       reservation:
-        start_date: チェックイン
-        end_date: チェックアウト
+        start_date: チェックイン日
+        end_date: チェックアウト日
         person_num: 人数

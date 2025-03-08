@@ -27,7 +27,7 @@
 
       <!-- 予約日時 -->
       <div class="ReservationForm">
-        <%= form_with model: @reservation, url: reservations_path, method: :post, scope: :reservation, local: true do |f| %>
+        <%= form_with model: @reservation, url: confirm_reservations_path, method: :post, scope: :reservation, local: true do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
 
           <div class="ReservationForm__input-container">
