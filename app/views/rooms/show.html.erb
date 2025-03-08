@@ -50,7 +50,7 @@
             <div class="ReservationForm__input-group ReservationForm__input-group--person-count">
               <%= f.label :person_num, "人数" %>
 
-              <%= f.number_field :person_num, placeholder: "0", class: "form-control ReservationForm__input ReservationForm__input--person-count" %>
+              <%= f.number_field :person_num, placeholder: "1", min: 1, class: "form-control ReservationForm__input ReservationForm__input--person-count" %>
               <span>人</span>
             </div>
           </div>

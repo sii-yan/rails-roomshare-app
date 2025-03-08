@@ -24,7 +24,7 @@
         <%= f.label :price, "料金", class: "form-label RoomsForm__label Form__label--required" %>
 
         <div class="RoomsForm__input">
-          <%= f.text_field :price, placeholder: "一日あたりの料金を入力", class:"form-control" %>
+          <%= f.text_field :price, min: 1, placeholder: "一日あたりの料金を入力", class:"form-control" %>
         </div>
       </div>
 

@@ -53,11 +53,22 @@ class RoomsController < ApplicationController
 
   # 施設検索
   def search
+    @rooms = Room.all
+
+    # エリア検索（住所が対象）
     if params[:area].present?
-      @rooms = Room.where("name LIKE ? OR description LIKE ?", "%#{params[:area]}%", "%#{params[:area]}%")
-    else
-      @rooms = Room.all
+      valid_areas = ["東京", "大阪", "京都", "札幌"]
+      if valid_areas.include?(params[:area])
+        @rooms = @rooms.where("address LIKE ?", "%#{params[:area]}%")
+      end
     end
+
+    # フリーワード検索（施設名・施設詳細が対象）
+    if params[:keyword].present?
+      keyword = "%#{params[:keyword]}%"
+      @rooms = @rooms.where("name LIKE ? OR description LIKE ?", keyword, keyword)
+    end
+
     render :index
   end
 

@@ -1,34 +1,347 @@
-@use "color-variables" as *;
 
-.hero {
-  // background: url("/assets/hero-bg.jpg") center/cover no-repeat;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
+
+.FirstView {
+  background-image: url(/assets/home/cover-lg.jpg);
+  background-size: cover;
+  background-position: 50%;
+  height: 750px;
+  margin-bottom: 180px;
+  padding-top: 80px;
+  width: 100%;
+
+  @include lg-device-or-less {
+    height: 850px;
+    padding-top: 117px;
+  }
+
+  @include md-device-or-less {
+    height: 750px;
+    margin-bottom: 100px;
+    padding-top: 117px;
+  }
+
+  @include sm-device-or-less {
+    background-image: url(/assets/home/cover-xs.png);
+    height: 460px;
+    margin-bottom: 80px;
+    padding-top: 60px;
+  }
 
   &__title {
-    font-size: 28px;
-    font-weight: bold;
+    color: #fff;
+    font-family: Lato, sans-serif;
+    font-size: 84px;
+    font-weight: 400;
+    line-height: 101px;
+    margin-bottom: 48px;
+    text-align: center;
+    word-break: keep-all;
+
+    @media screen and (min-width: 600px) and (max-width: 960px) {
+      font-size: 44px;
+      line-height: 53px;
+      margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: 600px) {
+      font-size: 34px;
+      line-height: 41px;
+      margin-bottom: 24px;
+    }
+
+    @media screen and (max-width: 400px) {
+      font-size: 24px;
+      line-height: 29px;
+    }
   }
 }
 
-.recommend-area {
-  margin-top: 40px;
-  text-align: center;
+.FirstViewSearch {
+  background: hsla(0, 0%, 100%, 0.4);
+  margin: auto;
+  padding: 32px;
+  width: 704px;
 
-  &__title {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 20px;
+  @media screen and (max-width: 960px) {
+    padding: 20px;
+    width: 478px;
   }
 
-  &__list {
+  @media screen and (max-width: 600px) {
+    max-width: 478px;
+    padding: 16px;
+    width: 100%;
+  }
+
+  &__input {
+    height: 58px;
+    margin-bottom: 16px;
+  }
+
+  &__button {
+    align-items: center;
+    border-radius: 12px;
     display: flex;
     justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
+    height: 58px;
+    font-size: 18px;
+    background-color: #ff7757;
+    color: #fff;
+    width: 100%;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:hover {
+      color: #fff;
+    }
   }
 }
+
+
+
+// .FirstView {
+//   background-image: url(/assets/home/cover-lg.jpg);
+//   background-size: cover;
+//   background-position: 50%;
+//   height: 750px;
+//   margin-bottom: 180px;
+//   padding-top: 80px;
+//   width: 100%
+
+// }
+
+// @include break-point.lg-device-or-less {
+//   .FirstView {
+//     height: 850px;
+//     padding-top: 117px;
+//   }
+// }
+
+// @include break-point.md-device-or-less {
+//   .FirstView {
+//     height: 750px;
+//     margin-bottom: 100px;
+//     padding-top: 117px;
+//   }
+// }
+
+// @include break-point.sm-device-or-less {
+//   .FirstView {
+//     background-image: url(/assets/home/cover-xs.png);
+//     height: 460px;
+//     margin-bottom: 80px;
+//     padding-top: 60px;
+//   }
+// }
+
+// .FirstView__title {
+//   color: #fff;
+//   font-family: Lato,sans-serif;
+//   font-size: 84px;
+//   font-weight: 400;
+//   line-height: 101px;
+//   margin-bottom: 48px;
+//   text-align: center;
+//   word-break: keep-all
+// }
+
+// @media screen and (min-width: 600px) and (max-width:960px) {
+//   .FirstView__title {
+//       font-size:44px;
+//       line-height: 53px;
+//       margin-bottom: 20px
+//   }
+// }
+
+// @media screen and (max-width: 600px) {
+//   .FirstView__title {
+//       font-size:34px;
+//       line-height: 41px;
+//       margin-bottom: 24px
+//   }
+// }
+
+// @media screen and (max-width: 400px) {
+//   .FirstView__title {
+//       font-size:24px;
+//       line-height: 29px
+//   }
+// }
+
+// .FirstViewSearch {
+//   background: hsla(0,0%,100%,.4);
+//   margin: auto;
+//   padding: 32px;
+//   width: 704px
+// }
+
+// @media screen and (max-width: 960px) {
+//   .FirstViewSearch {
+//       padding:20px;
+//       width: 478px
+//   }
+// }
+
+// @media screen and (max-width: 600px) {
+//   .FirstViewSearch {
+//       max-width:478px;
+//       padding: 16px;
+//       width: 100%
+//   }
+// }
+
+// .FirstViewSearch__input {
+//   height: 58px;
+//   margin-bottom: 16px
+// }
+
+// .FirstViewSearch__button {
+//   align-items: center;
+//   border-radius: 12px;
+//   display: flex;
+//   justify-content: center;
+//   height: 58px;
+//   font-size: 18px;
+//   background-color: #ff7757;
+//   color: #fff;
+//   width: 100%
+// }
+
+// .FirstViewSearch__button:focus {
+//   box-shadow: none
+// }
+
+// .FirstViewSearch__button:hover {
+//   color: #fff
+// }
+
+// .RecommendAreaSection {
+//   margin-bottom: 260px
+// }
+
+// @media screen and (min-width: 600px) and (max-width:960px) {
+//   .RecommendAreaSection {
+//       margin-bottom:180px
+//   }
+// }
+
+// @media screen and (max-width: 600px) {
+//   .RecommendAreaSection {
+//       margin-bottom:100px
+//   }
+// }
+
+// .RecommendAreaSection__title {
+//   border-bottom: 3px solid #ff7757;
+//   font-size: 44px;
+//   line-height: 66px;
+//   margin-bottom: 140px;
+//   padding-bottom: 15px;
+//   width: -webkit-fit-content;
+//   width: -moz-fit-content;
+//   width: fit-content
+// }
+
+// @media screen and (min-width: 600px) and (max-width:960px) {
+//   .RecommendAreaSection__title {
+//       font-size:34px;
+//       line-height: 50px;
+//       margin-bottom: 80px
+//   }
+// }
+
+// @media screen and (max-width: 600px) {
+//   .RecommendAreaSection__title {
+//       font-size:24px;
+//       line-height: 36px;
+//       margin-bottom: 60px;
+//       padding-bottom: 10px
+//   }
+// }
+
+// .RecommendAreas {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+//   grid-gap: 32px;
+//   gap: 32px
+// }
+
+// @media screen and (max-width: 600px) {
+//   .RecommendAreas {
+//       grid-gap:16px;
+//       gap: 16px
+//   }
+// }
+
+// .RecommendArea {
+//   background-size: cover;
+//   background-position: 50%;
+//   border-radius: 26px;
+//   display: flex;
+//   flex-direction: column;
+//   height: 455px;
+//   justify-content: flex-end;
+//   padding: 40px 24px;
+//   width: calc(25% - 24px)
+// }
+
+// @media screen and (min-width: 960px) and (max-width:1280px) {
+//   .RecommendArea {
+//       width:calc(33.33333% - 21.33333px)
+//   }
+// }
+
+// @media screen and (min-width: 600px) and (max-width:960px) {
+//   .RecommendArea {
+//       width:calc(50% - 16px)
+//   }
+// }
+
+// @media screen and (max-width: 600px) {
+//   .RecommendArea {
+//       margin:auto;
+//       width: 100%
+//   }
+// }
+
+// .RecommendArea--tokyo {
+//   background-image: url(/assets/home/recommend-area/tokyo.jpg)
+// }
+
+// .RecommendArea--osaka {
+//   background-image: url(/assets/home/recommend-area/osaka.jpg)
+// }
+
+// .RecommendArea--kyoto {
+//   background-image: url(/assets/home/recommend-area/kyoto.jpg)
+// }
+
+// .RecommendArea--sapporo {
+//   background-image: url(/assets/home/recommend-area/sapporo.jpg)
+// }
+
+// .RecommendArea__name {
+//   color: #fff
+// }
+
+// .RecommendArea__name--ja {
+//   font-size: 28px;
+//   line-height: 42px
+// }
+
+// .RecommendArea__name--en {
+//   font-family: Lato,sans-serif;
+//   font-size: 24px;
+//   font-weight: 400;
+//   line-height: 29px
+// }
+
+// .RecommendArea__name--en>svg {
+//   height: 20px;
+//   margin-top: -4px;
+//   margin-right: 5px;
+//   width: 20px
+// }
