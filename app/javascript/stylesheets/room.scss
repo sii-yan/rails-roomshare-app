@@ -1,0 +1,392 @@
+.RoomsContainer {
+  margin-bottom: 260px;
+  padding-top: 40px;
+
+  @include sm-device-or-less {
+    margin-bottom:200px
+  }
+
+  @include xs-device-or-less {
+    margin-bottom:100px;
+    padding-top: 24px
+  }
+
+  &__result {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 24px
+  }
+}
+
+.RoomList {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 32px;
+  gap: 32px;
+
+  @include sm-device-or-less {
+    grid-gap:20px;
+    gap: 20px
+  }
+
+  @include xs-device-or-less {
+      grid-gap:16px;
+      gap: 16px
+  }
+}
+
+.Room {
+  background: #fff8f1;
+  border-radius: 26px;
+  width: calc(33.33333% - 21.33333px);
+
+  @include sm-device-or-less {
+    width:calc(50% - 10px)
+  }
+
+  @include xs-device-or-less {
+    width:100%
+  }
+
+  &__image {
+    aspect-ratio: 16/9;
+    border-radius: 26px 26px 0 0;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%
+  }
+
+  &__name {
+    color: $text-gray;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 8px
+  }
+
+  &__address {
+    color: $text-gray;
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 3px
+  }
+
+  &__content {
+    display: -webkit-box;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 24px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden
+  }
+
+  &__price {
+    color: #ff7757;
+    font-family: Lato,sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 39px;
+    margin-bottom: 0;
+
+    @include md-device-or-less {
+      font-size:25px;
+      line-height: 32px;
+      margin-bottom: 8px
+    }
+  
+    @include xs-device-or-less {
+      font-size:21px;
+      line-height: 33px;
+      margin-bottom: 8px
+    }
+  }
+
+  &__link {
+    align-items: center;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    height: 58px;
+    font-size: 18px;
+    background-color: #ff7757;
+    color: #fff;
+    font-size: 16px;
+    line-height: 58px;
+    padding: 0 20px;
+    text-align: center
+  }
+
+  &__link:focus {
+    box-shadow: none
+  }
+
+  &__link:hover {
+    color: $white;
+
+    @include md-device-or-less {
+      width:100%
+    }
+  }
+}
+
+.RoomBodyWrapper {
+  padding: 40px 24px;
+
+  @include sm-device-or-less {
+    padding:20px;
+    padding: 16px
+  }
+}
+
+.RoomFooter {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  @include md-device-or-less {
+    align-items:flex-start;
+    flex-direction: column
+  }
+}
+
+
+// --------------- ルーム詳細 ---------------
+.RoomDetailsContainer {
+  margin-bottom: 260px;
+  padding-top: 40px;
+
+  @include sm-device-or-less {
+    margin-bottom:200px
+  }
+
+  @include xs-device-or-less {
+    margin-bottom:100px
+  }
+}
+
+.RoomDetailsHeader {
+  display: flex;
+  justify-content: space-between;
+
+  &__link {
+    color: #0071c1;
+    display: flex;
+    grid-gap: 8px;
+    gap: 8px;
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 24px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content
+  }
+}
+
+.RoomDetails {
+  align-items: flex-start;
+  display: flex;
+  grid-gap: 32px;
+  gap: 32px;
+
+  @include sm-device-or-less {
+    flex-direction:column;
+    grid-gap: 20px;
+    gap: 20px
+  }
+
+  &__image {
+    -o-object-fit: contain;
+    object-fit: contain;
+    width: 40%;
+
+    @include sm-device-or-less {
+      width:100%
+    }
+  }
+
+  &__price {
+    color: #ff7757;
+    font-family: Lato,sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 39px;
+    margin-bottom: 0;
+    font-size: 38px;
+    line-height: 54px;
+
+    @include md-device-or-less {
+      font-size:25px;
+      line-height: 32px;
+      margin-bottom: 8px;
+    }
+
+    @include sm-device-or-less {
+      font-size:28px;
+      line-height: 39px
+    }
+
+    @include xs-device-or-less {
+      font-size:21px;
+      line-height: 33px;
+      margin-bottom: 8px
+    }
+  }
+
+  &__name {
+    color: #767e86;
+    font-size: 24px;
+    line-height: 28px;
+    font-size: 28px;
+    line-height: 39px;
+    margin-bottom: 0;
+  
+    @include sm-device-or-less {
+      font-size:25px;
+      line-height: 32px
+    }
+  
+    @include xs-device-or-less {
+      font-size:21px;
+      line-height: 28px;
+      margin-bottom: 16px
+    }
+  }
+
+  &__address {
+    color: #767e86;
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 3px;
+  }
+
+  &__content {
+    display: -webkit-box;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 24px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    display: block
+  }
+}
+
+.RoomDetailsBody {
+  background-color: #fff8f1;
+  padding: 40px 24px;
+
+  @include xs-device-or-less {
+    padding:24px 16px
+  }
+
+  &__name-and-price {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+
+    @include xs-device-or-less {
+      align-items:flex-start;
+      flex-direction: column;
+      margin-bottom: 0
+    }
+  }
+}
+
+
+// --------------- ルーム予約フォーム ---------------
+.RoomsForm {
+  &__input-group {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    @include xs-device-or-less {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  &__label {
+    color: #333;
+    font-size: 16px;
+    line-height: 26px;
+    width: 33%;
+  }
+
+  &__input {
+    width: 66%;
+
+    @include xs-device-or-less {
+      width: 100%;
+    }
+  }
+
+  &__button {
+    align-items: center;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    height: 45px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    width: 100%;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &--submit {
+      background-color: #ff7757;
+      color: #fff;
+      margin-bottom: 16px;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    &--cancel {
+      border: 1px solid #e0e0e0;
+      color: #333;
+      line-height: 44px;
+
+      &:hover {
+        color: #6a6a6a;
+      }
+    }
+  }
+}
+
+
+// --------------- 登録済み一覧 ---------------
+.OwnRoomsTable {
+  @include sm-device-or-less {
+    white-space: nowrap;
+  }
+
+  td,
+  th {
+    font-size: 14px;
+    line-height: 18px;
+
+    &:first-of-type {
+      padding-left: 0 !important;
+    }
+
+    &:last-of-type {
+      width: 59px;
+    }
+  }
+
+  td {
+    padding: 16px 0.5rem !important;
+
+    &:first-of-type img {
+      width: 120px;
+    }
+  }
+}
+

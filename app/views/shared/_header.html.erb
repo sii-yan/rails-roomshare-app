@@ -7,7 +7,7 @@
     <% if user_signed_in? %>
     <div class="dropdown">
       <!-- プロフィールアイコン＋ユーザーネーム -->
-      <div class="d-flex align-items-center NavProfile" id="dropdown-button" data-bs-toggle="dropdown" aria-expanded="false">
+      <div class="d-flex align-items-center NavProfil show" id="dropdown-button" data-bs-toggle="dropdown" aria-expanded="false">
         <img class="NavProfile__avatar" alt="" src="">
         <span class="nav-item d-sm-inline-block d-none NavProfile__name">
           <%= current_user.name %>
@@ -29,22 +29,22 @@
       </div>
 
       <!-- ドロップダウンメニュー -->
-      <ul class="dropdown-menu DropdownMenu" aria-labelledby="dropdown-button">
-        <li class="DropdownMenu__item">
+      <ul class="dropdown-menu DropdownMenu show" aria-labelledby="dropdown-button" data-bs-popper="none">
+        <li class="dropdown-item DropdownMenu__item">
           <%= link_to "ルーム登録", new_room_path %>
         </li>
         <hr class="DropdownMenu__hr">
-        <li class="DropdownMenu__item">
+        <li class="dropdown-item DropdownMenu__item">
           <%= link_to "予約済み一覧", reservations_path %>
         </li>
-        <li class="DropdownMenu__item">
+        <li class="dropdown-item DropdownMenu__item DropdownMenu__item--middle">
           <%= link_to "登録済み一覧", own_rooms_path %>
         </li>
-        <li class="DropdownMenu__item">
+        <li class="dropdown-item DropdownMenu__item">
           <%= link_to "アカウント設定", account_users_path(current_user) %>
         </li>
         <hr class="DropdownMenu__hr">
-        <li class="DropdownMenu__item">
+        <li class="dropdown-item DropdownMenu__item">
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
         </li>
       </ul>
@@ -62,3 +62,4 @@
     <% end %>
   </div>
 </nav>
+

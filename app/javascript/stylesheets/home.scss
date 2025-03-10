@@ -1,0 +1,211 @@
+
+// --------------- FirstView ---------------
+.FirstView {
+  background-image: url('~images/home/hero.jpg');
+  background-size: cover;
+  background-position: 50%;
+  height: 750px;
+  margin-bottom: 180px;
+  padding-top: 80px;
+  width: 100%;
+
+  @include lg-device-or-less {
+    height: 850px;
+    padding-top: 117px;
+  }
+
+  @include md-device-or-less {
+    height: 750px;
+    margin-bottom: 100px;
+    padding-top: 117px;
+  }
+
+  @include sm-device-or-less {
+    height: 460px;
+    margin-bottom: 80px;
+    padding-top: 60px;
+  }
+
+  &__title {
+    color: $white;
+    font-family: Lato, sans-serif;
+    font-size: 84px;
+    font-weight: 400;
+    line-height: 101px;
+    margin-bottom: 48px;
+    text-align: center;
+    word-break: keep-all;
+
+    @include sm-device-or-less {
+      font-size: 44px;
+      line-height: 53px;
+      margin-bottom: 20px;
+    }
+
+    @include xs-device-or-less {
+      font-size: 34px;
+      line-height: 41px;
+      margin-bottom: 24px;
+    }
+
+    @include xxs-device {
+      font-size: 24px;
+      line-height: 29px;
+    }
+  }
+}
+
+.FirstViewSearch {
+  background: hsla(0, 0%, 100%, 0.4);
+  margin: auto;
+  padding: 32px;
+  width: 704px;
+
+  @include sm-device-or-less {
+    padding: 20px;
+    width: 478px;
+  }
+
+  @include xs-device-or-less {
+    max-width: 478px;
+    padding: 16px;
+    width: 100%;
+  }
+
+  &__input {
+    height: 58px;
+    margin-bottom: 16px;
+  }
+
+  &__button {
+    align-items: center;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    height: 58px;
+    font-size: 18px;
+    background-color: #ff7757;
+    color: $white;
+    width: 100%;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+// --------------- RecommendArea ---------------
+.RecommendAreaSection {
+  margin-bottom: 260px;
+
+  @include sm-device {
+    margin-bottom:180px
+  }
+
+  @include xs-device-or-less {
+    margin-bottom:100px
+  }
+
+  &__title {
+    border-bottom: 3px solid #ff7757;
+    font-size: 44px;
+    line-height: 66px;
+    margin-bottom: 140px;
+    padding-bottom: 15px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+
+    @include sm-device {
+      font-size:34px;
+      line-height: 50px;
+      margin-bottom: 80px
+    }
+
+    @include xs-device-or-less {
+      font-size:24px;
+      line-height: 36px;
+      margin-bottom: 60px;
+      padding-bottom: 10px
+    }
+  }
+}
+
+.RecommendAreas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  grid-gap: 32px;
+  gap: 32px;
+
+  @include xs-device-or-less {
+    grid-gap:16px;
+    gap: 16px
+  }
+}
+
+
+.RecommendArea {
+  background-size: cover;
+  background-position: 50%;
+  border-radius: 26px;
+  display: flex;
+  flex-direction: column;
+  height: 455px;
+  justify-content: flex-end;
+  padding: 40px 24px;
+  width: calc(25% - 24px);
+
+  @include md-device {
+    width:calc(33.33333% - 21.33333px)
+  }
+
+  @include sm-device {
+    width:calc(50% - 16px)
+  }
+
+  @include xs-device-or-less {
+    margin:auto;
+    width: 100%
+  }
+
+  &--tokyo {
+    background-image: url('~images/home/tokyo.jpg')
+  }
+  &--osaka {
+    background-image: url('~images/home/osaka.jpg')
+  }
+  &--kyoto {
+    background-image: url('~images/home/kyoto.jpg')
+  }
+  &--sapporo {
+    background-image: url('~images/home/sapporo.jpg')
+  }
+
+  &__name {
+    color: $white
+  }
+
+  &__name--ja {
+    font-size: 28px;
+    line-height: 42px
+  }
+
+  &__name--en {
+    font-family: Lato,sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px
+  }
+
+  &__name--en>svg {
+    font-family: Lato,sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px
+  }
+}

@@ -27,7 +27,7 @@
               <!-- 画像 -->
               <td>
                 <% if reservation.room.image.attached? %>
-                <%= image_tag reservation.room.image, class: "RoomCard__image" %>
+                <%= image_tag reservation.room.image, class: "RoomDetails__image" %>
                 <% else %>
                   <!-- デフォルト画像 -->
                   <%= image_tag "default/default-image.png", class: "RoomDetails__image" %>
