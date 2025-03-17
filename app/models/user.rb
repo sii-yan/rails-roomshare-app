@@ -7,4 +7,8 @@ class User < ApplicationRecord
 
   has_many :rooms
   has_many :reservations
+
+  has_one_attached :profile_image # 画像添付の設定
+
+
 end

@@ -1,6 +1,8 @@
 
 // --------------- FirstView ---------------
 .FirstView {
+  position: relative;
+  top: -80px;
   background-image: url('~images/home/hero.jpg');
   background-size: cover;
   background-position: 50%;
@@ -11,46 +13,44 @@
 
   @include lg-device-or-less {
     height: 850px;
-    padding-top: 117px;
+    padding-top: 120px;
   }
 
   @include md-device-or-less {
     height: 750px;
     margin-bottom: 100px;
-    padding-top: 117px;
+    padding-top: 120px;
   }
 
   @include sm-device-or-less {
     height: 460px;
-    margin-bottom: 80px;
-    padding-top: 60px;
+    margin-bottom: 16px;
+    padding-top: 120px;
   }
 
   &__title {
     color: $white;
-    font-family: Lato, sans-serif;
-    font-size: 84px;
-    font-weight: 400;
-    line-height: 101px;
-    margin-bottom: 48px;
+    font-size: 64px;
+    line-height: 96px;
+    margin-bottom: 32px;
     text-align: center;
     word-break: keep-all;
 
     @include sm-device-or-less {
       font-size: 44px;
-      line-height: 53px;
+      line-height: 52px;
       margin-bottom: 20px;
     }
 
     @include xs-device-or-less {
       font-size: 34px;
-      line-height: 41px;
+      line-height: 42px;
       margin-bottom: 24px;
     }
 
     @include xxs-device {
       font-size: 24px;
-      line-height: 29px;
+      line-height: 28px;
     }
   }
 }
@@ -60,6 +60,7 @@
   margin: auto;
   padding: 32px;
   width: 704px;
+  border-radius: 100vh;
 
   @include sm-device-or-less {
     padding: 20px;
@@ -72,28 +73,19 @@
     width: 100%;
   }
 
-  &__input {
-    height: 58px;
-    margin-bottom: 16px;
-  }
-
-  &__button {
-    align-items: center;
-    border-radius: 12px;
+  &__form {
     display: flex;
-    justify-content: center;
-    height: 58px;
-    font-size: 18px;
-    background-color: #ff7757;
-    color: $white;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
+    height: 60px;
+    border-radius: 100vh;
+    background-color: $white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .05);
+    padding: 0 16px;
 
-    &:focus {
-      box-shadow: none;
-    }
-
-    &:hover {
-      color: $white;
+    @include sm-device-or-less {
+      height: 45px;
     }
   }
 }
@@ -111,54 +103,42 @@
   }
 
   &__title {
-    border-bottom: 3px solid #ff7757;
-    font-size: 44px;
-    line-height: 66px;
-    margin-bottom: 140px;
-    padding-bottom: 15px;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
+    font-size: 32px;
+    margin-bottom: 40px;
 
     @include sm-device {
-      font-size:34px;
-      line-height: 50px;
-      margin-bottom: 80px
+      font-size:28px;
+      margin-bottom: 24px
     }
 
     @include xs-device-or-less {
       font-size:24px;
-      line-height: 36px;
-      margin-bottom: 60px;
-      padding-bottom: 10px
+      margin-bottom: 16px;
     }
   }
 }
 
 .RecommendAreas {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  grid-gap: 32px;
+  flex-wrap: wrap;
   gap: 32px;
 
   @include xs-device-or-less {
-    grid-gap:16px;
-    gap: 16px
+    gap: 16px;
   }
 }
-
 
 .RecommendArea {
   background-size: cover;
   background-position: 50%;
-  border-radius: 26px;
+  border-radius: 1rem;
   display: flex;
   flex-direction: column;
-  height: 455px;
   justify-content: flex-end;
   padding: 40px 24px;
   width: calc(25% - 24px);
+  height: 200px;
 
   @include md-device {
     width:calc(33.33333% - 21.33333px)
@@ -196,14 +176,12 @@
   }
 
   &__name--en {
-    font-family: Lato,sans-serif;
     font-size: 24px;
     font-weight: 400;
     line-height: 29px
   }
 
   &__name--en>svg {
-    font-family: Lato,sans-serif;
     font-size: 24px;
     font-weight: 400;
     line-height: 29px

@@ -1,10 +1,6 @@
-<% if flash[:notice] %>
-  <div class="SnackBar SnackBar--notice"><%= flash[:notice] %></div>
-<% end %>
-
 <div class="FormWrapper">
   <section class="FormContainer">
-    <h2>再予約する</h2>
+    <h2 class="mb-5 FormContainer__title">再予約する</h2>
 
     <div class="ReservationDetails">
       <% if @reservation.room.image.attached? %>
@@ -32,7 +28,7 @@
       </p>
     </div>
 
-    <%= form_with model: @reservation, local: true, class: "Form ReservationsForm" do |f| %>
+    <%= form_with model: @reservation, url: confirm_reservations_path, method: :post, local: true, class: "Form ReservationsForm" do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <%= f.hidden_field :room_id %>
 
@@ -47,7 +43,7 @@
         <%= f.label :end_date, "チェックアウト", class: "form-label ReservationsForm__label Form__label--required" %>
 
         <%= f.text_field :end_date, class: "form-control js-picker", placeholder: "---- / -- / --" %>
-        
+
       </div>
 
       <div class="ReservationsForm__input-group ReservationsForm__input-group--person-count">
@@ -57,7 +53,7 @@
         <span>人</span>
       </div>
 
-      <%= f.submit "再予約する", class: "btn ReservationsForm__button ReservationsForm__button--submit" %>
+      <%= f.submit "再予約する", class: "btn mb-3 ReservationsForm__button ReservationsForm__button--submit" %>
     <% end %>
     <%= link_to "キャンセル", reservations_path, class: "btn ReservationsForm__button ReservationsForm__button--cancel" %>
   </section>

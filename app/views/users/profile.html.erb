@@ -1,31 +1,52 @@
+<!-- スナックバー -->
+<% if flash[:notice] %>
+  <div class="SnackBar SnackBar--notice"><%= flash[:notice] %></div>
+<% end %>
+
 <section class="container UserSection">
   <h2>設定</h2>
 
   <div class="UserContainer">
-    <ul class="SideNavigation">
-      <li class="SideNavigation__item ">
-        <%= link_to "アカウント", account_users_path %>
-      </li>
+    <div class="SideNavigation">
+      <div class="SideNavigation__item ">
+        <%= link_to account_users_path do %>
+          <span class="bi bi-person-circle"></span>
+          <span>アカウント</span>
+        <% end %>
+      </div>
 
-      <li class="SideNavigation__item active">
-        <%= link_to "プロフィール", profile_users_path %>
-      </li>
-    </ul>
+      <div class="SideNavigation__item active">
+        <%= link_to profile_users_path do %>
+          <span class="bi bi-person-lines-fill"></span>
+          <span>プロフィール</span>
+        <% end %>
+      </div>
+    </div>
 
     <div class="AccountInformation">
-      <ul class="TabNavigation">
-        <li class="TabNavigation__item ">
-          <%= link_to "アカウント", account_users_path %>
-        </li>
+      <div class="TabNavigation">
+        <div class="TabNavigation__item ">
+          <%= link_to account_users_path do %>
+            <span class="bi bi-person-circle"></span>
+            <span>アカウント</span>
+          <% end %>
+        </div>
 
-        <li class="TabNavigation__item active">
-          <%= link_to "プロフィール", profile_users_path %>
-        </li>
-      </ul>
+        <div class="TabNavigation__item active">
+          <%= link_to profile_users_path do %>
+            <span class="bi bi-person-lines-fill"></span>
+            <span>プロフィール</span>
+          <% end %>
+        </div>
+      </div>
 
       <div class="AccountInformation__header">
-        <h3>アカウント</h3>
-        <%= link_to "編集", profile_edit_users_path, class: "AccountInformation__link" %>
+        <h3>プロフィール</h3>
+
+        <%= link_to  profile_edit_users_path, class: "AccountInformation__link" do %>
+          <span class="bi bi-pencil-square"></span>
+          <span>編集</span>
+        <% end %>
       </div>
 
 
@@ -33,7 +54,11 @@
         <label class="AccountInformation__label" for="image">アイコン画像</label>
 
         <p class="AccountInformation__value AccountInformation__value--image">
-          <!-- <img alt="アイコン画像" src="/assets/common/default-avatar-7a6cbfd7993e89f24bfc888f4a035a83c6f1428b8bdc47eed9095f2799a40153.png"> -->
+          <% if @user.profile_image.present? %>
+            <%= image_tag @user.profile_image %>
+          <% else %>
+            <%= image_tag "default/default-avatar.png" %>
+          <% end %>
         </p>
       </div>
 

@@ -1,6 +1,8 @@
 @import "bootstrap/scss/bootstrap"; // Bootstrap を Webpacker 経由で読み込む
 @import "color-variables";
 @import "break-point";
+@import "snack-bar";
+@import "search-bar";
 @import "account";
 @import "form";
 @import "reservation";

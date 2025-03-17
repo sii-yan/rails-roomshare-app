@@ -1,17 +1,22 @@
+<!-- スナックバー -->
+<% if flash[:notice] %>
+  <div class="SnackBar SnackBar--notice"><%= flash[:notice] %></div>
+<% end %>
 <!-- 検索バー -->
 <%= render "shared/search" %>
 
 <!-- ルーム詳細 -->
 <div class="container RoomDetailsContainer">
   <div class="RoomDetailsHeader">
-    <%= link_to :back, class: "RoomDetailsHeader__link" do %>
-      <i class="bi bi-arrow-left-short">戻る</i>
+    <%= link_to rooms_path, class: "RoomDetailsHeader__link" do %>
+      <i class="bi bi-chevron-left"></i>
+      <span>戻る</span>
     <% end %>
   </div>
 
   <div class="RoomDetails">
     <% if @room.image.attached? %>
-      <%= image_tag room.image, class: "RoomDetails__image" %>
+      <%= image_tag @room.image, class: "RoomDetails__image" %>
     <% else %>
       <!-- デフォルト画像 -->
       <%= image_tag "default/default-image.png", class: "RoomDetails__image" %>

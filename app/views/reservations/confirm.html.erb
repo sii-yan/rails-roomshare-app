@@ -1,6 +1,6 @@
 <div class="FormWrapper">
   <section class="FormContainer">
-    <h2>予約内容の確認</h2>
+    <h2 class="mb-5 FormContainer__title">予約内容の確認</h2>
 
     <div class="ReservationConfirm__value-group">
       <p class="ReservationConfirm__label">チェックイン</p>
@@ -40,7 +40,7 @@
 
       <%= f.submit "予約を確定する", class: "btn ReservationConfirm__button ReservationConfirm__button--submit" %>
     <% end %>
-    <%= link_to "キャンセル", :back, class: "btn ReservationConfirm__button ReservationConfirm__button--cancel" %>
+    <%= link_to "キャンセル", room_path(@reservation.room_id), class: "btn ReservationConfirm__button ReservationConfirm__button--cancel" %>
   </section>
 </div>
 

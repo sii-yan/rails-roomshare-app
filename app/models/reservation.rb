@@ -5,7 +5,7 @@ class Reservation < ApplicationRecord
   validates :start_date, :end_date, :person_num, presence: true
   validate :check_out_after_check_in
 
-  before_save :calculate_total_price
+  before_validation :calculate_total_price
 
   private
 
@@ -16,12 +16,12 @@ class Reservation < ApplicationRecord
     end
   end
 
-  # 合計料金を計算（部屋の価格 × 宿泊日数 × 人数）
   def calculate_total_price
     if room && start_date && end_date && person_num
       nights = (end_date - start_date).to_i
       self.total_price = room.price * nights * person_num
     end
   end
+  
 end
 

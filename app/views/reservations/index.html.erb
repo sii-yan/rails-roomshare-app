@@ -48,18 +48,30 @@
 
               <td>
                 <div class="dropdown">
-                  <div class="d-flex align-items-center justify-content-center" id="dropdown-button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <%= tag.svg(class: "bi bi-three-dots", width: "20", height: "20", fill: "currentColor") do %>
+                  <div
+                    class="d-flex align-items-center justify-content-center"
+                    id="dropdown-button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      class="bi bi-three-dots"
+                      viewBox="0 0 16 16"
+                    >
                       <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
-                    <% end %>
+                    </svg>
                   </div>
 
-                  <ul class="dropdown-menu DropdownMenu" aria-labelledby="dropdown-button">
-                    <li class="DropdownMenu__item">
+                  <ul class="dropdown-menu dropdown-menu-lg-end DropdownMenu" aria-labelledby="dropdown-button">
+                    <li class="dropdown-item DropdownMenu__item">
                       <%= link_to "再予約", edit_reservation_path(reservation) %>
                     </li>
 
-                    <li class="DropdownMenu__item DropdownMenu__item--danger">
+                    <li class="dropdown-item DropdownMenu__item DropdownMenu__item--danger">
                       <%= link_to "施設を削除", reservation, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "ConfirmBody" %>
                     </li>
                   </ul>
@@ -74,27 +86,5 @@
         <% end %>
       </tbody>
     </table>
-  </div>
-</div>
-
-<!-- 削除確認モーダル -->
-<div id="deleteModal" class="modal fade" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">以下の施設を削除しますか？</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-center">
-        <img id="modal-room-image" class="ConfirmBody__image" src="" alt="Room Image">
-        <div id="modal-room-name"></div>
-        <div id="modal-room-price"></div>
-        <p>よろしければ「削除」ボタンを押してください。</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
-        <%= button_to "削除", "", method: :delete, class: "btn btn-danger", id: "modal-delete-button", form: false %>
-      </div>
-    </div>
   </div>
 </div>

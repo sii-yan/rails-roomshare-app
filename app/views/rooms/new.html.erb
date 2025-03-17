@@ -1,6 +1,6 @@
 <div class="FormWrapper">
   <section class="FormContainer">
-    <h2>新規登録</h2>
+    <h2 class="mb-5 FormContainer__title">新規施設登録</h2>
 
     <%= form_with model: @room, local: true, class: "Form RoomsForm" do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
@@ -40,12 +40,14 @@
         <%= f.label :image, "施設画像", class: "RoomsForm__label" %>
 
         <p class=" RoomsForm__input FileUploadArea__input-group">
-          <%= f.file_field :image, class: "FileUploadArea__label" %>
-          <span>画像アップロード</span>
+          <%= f.label :image, class: "FileUploadArea__label" do %>
+            <span>画像アップロード</span>
+            <%= f.file_field :image %>
+          <% end %>
         </p>
       </div>
 
-      <%= f.submit "保存", class: "btn RoomsForm__button RoomsForm__button--submit" %>
+      <%= f.submit "保存", class: "btn mb-3 RoomsForm__button RoomsForm__button--submit" %>
     <% end %>
     <%= link_to "キャンセル", :back, class: "btn RoomsForm__button RoomsForm__button--cancel" %>
   </section>

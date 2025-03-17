@@ -52,12 +52,12 @@
                     </svg>
                   </div>
 
-                  <ul class="dropdown-menu DropdownMenu" aria-labelledby="dropdown-button">
-                    <li class="DropdownMenu__item">
+                  <ul class="dropdown-menu dropdown-menu-lg-end DropdownMenu" aria-labelledby="dropdown-button">
+                    <li class="dropdown-item DropdownMenu__item">
                       <%= link_to "編集", edit_room_path(room) %>
                     </li>
 
-                    <li class="DropdownMenu__item DropdownMenu__item--danger">
+                    <li class="dropdown-item DropdownMenu__item DropdownMenu__item--danger">
                       <%= link_to "施設を削除", room, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "delete-room-btn" %>
                     </li>
                   </ul>
@@ -66,7 +66,7 @@
             </tr>
           <% end %>
         <% else %>
-          <div class="">
+          <div class="text-center">
             <p>現在、施設が登録されていません。</p>
           </div>
         <% end %>
@@ -75,24 +75,3 @@
   </div>
 </section>
 
-<!-- 削除確認モーダル -->
-<div id="deleteModal" class="modal fade" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">以下の施設を削除しますか？</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-center">
-        <img id="modal-room-image" class="ConfirmBody__image" src="" alt="Room Image">
-        <div id="modal-room-name"></div>
-        <div id="modal-room-price"></div>
-        <p>よろしければ「削除」ボタンを押してください。</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
-        <%= button_to "削除", "", method: :delete, class: "btn btn-danger", id: "modal-delete-button", form: false %>
-      </div>
-    </div>
-  </div>
-</div>
