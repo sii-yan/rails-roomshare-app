@@ -16,12 +16,13 @@ class Reservation < ApplicationRecord
     end
   end
 
+  # 合計料金（宿泊代×宿泊日数×人数）
   def calculate_total_price
     if room && start_date && end_date && person_num
       nights = (end_date - start_date).to_i
       self.total_price = room.price * nights * person_num
     end
   end
-  
+
 end
 

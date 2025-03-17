@@ -10,7 +10,6 @@ class RoomsController < ApplicationController
 
   # 施設詳細
   def show
-    @room = Room.find(params[:id])
     @reservation = Reservation.new
   end
 
@@ -20,11 +19,10 @@ class RoomsController < ApplicationController
   end
 
    # 施設作成
-  def create
+   def create
     @room = current_user.rooms.build(room_params)
     if @room.save
-      flash[:notice] = "宿泊施設が登録されました。"
-      redirect_to @room
+      redirect_to @room, notice: "宿泊施設が登録されました。"
     else
       render :new
     end
@@ -37,8 +35,7 @@ class RoomsController < ApplicationController
   # 施設更新
   def update
     if @room.update(room_params)
-      flash[:notice] = "宿泊施設情報が更新されました。"
-      redirect_to @room
+      redirect_to @room, notice: "宿泊施設情報が更新されました。"
     else
       render :edit
     end
@@ -47,8 +44,7 @@ class RoomsController < ApplicationController
   # 施設削除
   def destroy
     @room.destroy
-    flash[:notice] = "宿泊施設が削除されました。"
-    redirect_to rooms_path
+    redirect_to rooms_path, notice: "宿泊施設が削除されました。"
   end
 
   # 施設検索
@@ -74,7 +70,7 @@ class RoomsController < ApplicationController
 
   # 登録済みルーム一覧
   def own
-    @rooms = Room.where(user_id: current_user.id) # ユーザーに関連する部屋を取得
+    @rooms = current_user.rooms
   end
 
   private

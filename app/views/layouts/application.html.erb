@@ -15,6 +15,10 @@
   </head>
 
   <body>
+    <!-- スナックバー -->
+    <% if flash[:notice] %>
+    <div class="SnackBar SnackBar--notice"><%= flash[:notice] %></div>
+    <% end %>
 
     <header class="Header sticky-top">
       <% if content_for?(:header) %>

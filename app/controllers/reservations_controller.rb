@@ -1,7 +1,6 @@
 class ReservationsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!  #ユーザーがログインしているかチェック
   before_action :set_reservation, only: [:edit, :update, :destroy]
-  before_action :set_room, only: [:new, :create]
 
   def index
     @reservations = current_user.reservations.includes(:room).order(created_at: :desc)
@@ -16,7 +15,6 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to reservations_path, notice: "予約が完了しました。"
     else
-      @room = @reservation.room
       render "rooms/show", status: :unprocessable_entity
     end
   end
@@ -37,7 +35,7 @@ class ReservationsController < ApplicationController
 
   def confirm
     @reservation = current_user.reservations.new(reservation_params)
-    @room = Room.find_by(id: @reservation.room_id)
+    @room = Room.find_by(id: @reservation.room_id) # @room を取得
 
     if @reservation.valid?
       render "reservations/confirm" # エラーがなければ予約確認画面へ
@@ -50,12 +48,9 @@ class ReservationsController < ApplicationController
 
   private
 
+  # ログインユーザーの予約データを取得
   def set_reservation
     @reservation = current_user.reservations.find(params[:id])
-  end
-
-  def set_room
-    @room = Room.find(params[:room_id] || params.dig(:reservation, :room_id))
   end
 
   def reservation_params

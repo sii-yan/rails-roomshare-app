@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   # アカウント設定ページ
@@ -11,25 +11,16 @@ class UsersController < ApplicationController
     @user = current_user
 
     # パスワードの変更を含む場合
-    if account_params[:password].present? || account_params[:password_confirmation].present?
+    if account_params[:password].present?
       unless account_params[:current_password].present?
         flash.now[:alert] = "現在のパスワードを入力してください。"
-        if @user.errors.any?
-          puts "=== DEBUG: @user のエラーメッセージ ==="
-          puts @user.errors.full_messages
-        end
         return render :account
       end
 
       if @user.update_with_password(account_params)
-        bypass_sign_in(@user) # 更新後に再ログインさせる
+        bypass_sign_in(@user)
         redirect_to account_users_path, notice: "アカウント情報を更新しました。"
       else
-        flash.now[:alert] = "アカウント情報の更新に失敗しました。"
-        if @user.errors.any?
-          puts "=== DEBUG: @user のエラーメッセージ ==="
-          puts @user.errors.full_messages
-        end
         render :account
       end
     else
@@ -37,11 +28,6 @@ class UsersController < ApplicationController
       if @user.update(account_params.except(:current_password))
         redirect_to account_users_path, notice: "アカウント情報を更新しました。"
       else
-        flash.now[:alert] = "アカウント情報の更新に失敗しました。"
-        if @user.errors.any?
-          puts "=== DEBUG: @user のエラーメッセージ ==="
-          puts @user.errors.full_messages
-        end
         render :account
       end
     end
