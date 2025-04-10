@@ -1,24 +1,16 @@
-# README
+## アプリ名
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+宿泊予約アプリ
 
-Things you may want to cover:
+## アプリ概要
 
-* Ruby version
+宿泊施設を貸したい人と借りたい人をマッチングするアプリです。ユーザー登録、施設登録、検索、予約まで一連の流れを体験できる構成です。
 
-* System dependencies
+### 主な機能
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- ユーザー：新規登録 / ログイン / プロフィール・アカウント編集（アイコン対応）
+- 施設：登録 / 一覧・詳細表示 / エリア・キーワード検索（あいまい検索対応）
+- 予約：チェックイン・アウト・人数入力で予約、宿泊料金を自動計算
+- 予約一覧：自分の予約履歴を表示
+- デフォルト画像対応（施設・ユーザーアイコン）
+- 日付・日時表示はJST形式（`yyyy/mm/dd`, `yyyy/mm/dd HH:MM`）
